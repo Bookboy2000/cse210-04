@@ -1,6 +1,6 @@
 from game.cast.actor import Actor
 
-class Artifact(Actor):
+class Treasure(Actor):
     """
     Two items to be displayed on screen. Rock and Gems. 
 
