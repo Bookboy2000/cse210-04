@@ -15,7 +15,7 @@ class Treasure(Actor):
         self._message = ""
 
     def get_message(self):
-        """Gets the treasure's message.
+        """Gets the treasure's score whether is adding points or losing them.
         
         Returns:
             string: The message.
