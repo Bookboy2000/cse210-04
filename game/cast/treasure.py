@@ -15,7 +15,7 @@ class Treasure(Actor):
         self._message = ""
 
     def get_message(self):
-        """Gets the artifact's message.
+        """Gets the treasure's message.
         
         Returns:
             string: The message.
