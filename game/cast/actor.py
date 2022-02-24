@@ -1,3 +1,4 @@
+from tkinter import font
 from game.shared.point import Point
 from game.shared.color import Color
 
@@ -26,6 +27,8 @@ class Actor:
         self._color = Color(255, 255, 255)
         self._position = Point(0, 0)
         self._velocity = Point(0, 0)
+        self._text = ""
+        self._font_size = 15
 
 
     def get_color(self):
@@ -62,7 +65,22 @@ class Actor:
         Return self._points
         """
         return self._points
+    
+    def get_text(self):
+        """
+        Gets the message associated with the actor
+        Return self._message
+        """
 
+        return self._text
+    
+    def get_font_size(self):
+        """Gets the actor's font size.
+        
+        Returns:
+            Point: The actor's font size.
+        """
+        return self._font_size
     
     def move(self, max_x, max_y):
         """
@@ -100,3 +118,28 @@ class Actor:
         updates the velocity with the given one
         """
         self._velocity = velocity
+        
+    def set_text(self, text):
+        """
+        Updates the message with the given message
+        """
+        
+        self._text = text
+        
+    def set_font_size(self, font_size):
+        """
+        Sets the font size to a specified size
+        """
+        self._font_size = font_size
+        
+    def move_next(self, max_x, max_y):
+        """Moves the actor to its next position according to its velocity. Will wrap the position 
+        from one side of the screen to the other when it reaches the given maximum x and y values.
+        
+        Args:
+            max_x (int): The maximum x value.
+            max_y (int): The maximum y value.
+        """
+        x = (self._position.get_x() + self._velocity.get_x()) % max_x
+        y = (self._position.get_y() + self._velocity.get_y()) % max_y
+        self._position = Point(x, y)
