@@ -1,5 +1,5 @@
 from game.cast.actor import Actor
-
+import random
 class Treasure(Actor):
     """
     Two items to be displayed on screen. Rock and Gems. 
@@ -13,6 +13,16 @@ class Treasure(Actor):
     def __init__(self):
         super().__init__()
         self._message = ""
+        self._type_determiner = random.randint(1,10) % 2
+        if self._type_determiner == 1:
+            super().set_text("*")
+            self._points = 100
+            self._type = "jewel"
+        else:
+            super().set_text("O")
+            self._points = -100
+            self._type = "rock"
+        super().set_velocity
 
     def get_message(self):
         """Gets the treasure's score whether is adding points or losing them.
@@ -29,3 +39,8 @@ class Treasure(Actor):
             message (string): The given message.
         """
         self._message = message
+        
+    def get_points(self):
+        
+        """Gets the treasure's pounts"""
+        return self._points
