@@ -45,7 +45,7 @@ class Treasure(Actor):
         
     def get_points(self):
         
-        """Gets the treasure's pounts"""
+        """Gets the treasure's points"""
         return self._points
     
     def set_points(self, points):
@@ -55,6 +55,9 @@ class Treasure(Actor):
         self._points = points
     
     def reset_item(self):
+
+        """Once the actor gets to the cell just below the top one
+        reset_item sets its x axis, sets the color, and sets the type (Jewel or rock)."""
         
         self._type_determiner = random.randint(1,10) % 2
         if self._type_determiner == 1:
