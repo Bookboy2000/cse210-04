@@ -62,10 +62,15 @@ class Director:
         
         for treasure in treasures:
             treasure.move_next(max_x, max_y)
+            if treasure.get_position().get_y() == 0:
+                treasure.reset_item()
+            
+                
             if miner.get_position().equals(treasure.get_position()):
                 tempscore = treasure.get_points()
                 self._score += tempscore
-                banner.set_text(f"SCORE: {str(self._score)}")    
+                banner.set_text(f"SCORE: {str(self._score)}") 
+           
         
     def _do_outputs(self, cast):
         """Draws the actors on the screen.
@@ -73,6 +78,7 @@ class Director:
         Args:
             cast (Cast): The cast of actors.
         """
+        
         self._video_service.clear_buffer()
         actors = cast.get_all_actors()
         self._video_service.draw_actors(actors)

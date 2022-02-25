@@ -1,5 +1,8 @@
 from game.cast.actor import Actor
+from game.shared.point import Point
+from game.shared.color import Color
 import random
+
 class Treasure(Actor):
     """
     Two items to be displayed on screen. Rock and Gems. 
@@ -44,3 +47,28 @@ class Treasure(Actor):
         
         """Gets the treasure's pounts"""
         return self._points
+    
+    def reset_item(self):
+        
+        self._type_determiner = random.randint(1,10) % 2
+        if self._type_determiner == 1:
+            super().set_text("*")
+            self._points = 100
+            self._type = "jewel"
+        else:
+            super().set_text("O")
+            self._points = -100
+            self._type = "rock"
+            
+        r = random.randint(0, 255)
+        g = random.randint(0, 255)
+        b = random.randint(0, 255)
+        super().set_color(Color(r, g, b))
+            
+        
+        x = random.randint(1, 599)
+        y = 1
+        position = Point(x, y)
+        position = position.scale(15)
+        
+        super().set_position(position)

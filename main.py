@@ -23,7 +23,7 @@ COLS = 60
 ROWS = 40
 CAPTION = "Greed"
 WHITE = Color(255, 255, 255)
-DEFAULT_TREASURES = 40
+DEFAULT_TREASURES = 10
 TREASURE_VELOCITY = Point(0, 1)
 TREASURE_VELOCITY = TREASURE_VELOCITY.scale(CELL_SIZE)
 
@@ -55,7 +55,7 @@ def main():
     for n in range(DEFAULT_TREASURES):
 
         x = random.randint(1, COLS - 1)
-        y = 0
+        y = 1
         position = Point(x, y)
         position = position.scale(CELL_SIZE)
 
