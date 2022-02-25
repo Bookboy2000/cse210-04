@@ -43,7 +43,8 @@ def main():
     # create the player
     x = int(MAX_X / 2)
     y = int(MAX_Y / 2)
-    position = Point(x, y)
+    position = Point(x, MAX_Y - 1)
+    position = position.scale(CELL_SIZE)
 
     miner = Actor()
     miner.set_text("#")

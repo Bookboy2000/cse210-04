@@ -59,7 +59,10 @@ class Director:
         banner.set_text(f"SCORE: {self._score}")
         max_x = self._video_service.get_width()
         max_y = self._video_service.get_height()
-        miner.move_next(max_x, max_y)
+        #miner.move_next(max_x, max_y)
+        
+        #The above was commented out because moving along the y axis was not part of the requirements, unless it be bonus
+        miner.move_miner(max_x)
         
         for treasure in treasures:
             treasure.move_next(max_x, max_y)

@@ -145,3 +145,15 @@ class Actor:
         x = (self._position.get_x() + self._velocity.get_x()) % max_x
         y = (self._position.get_y() + self._velocity.get_y()) % max_y
         self._position = Point(x, y)
+        
+    def move_miner(self, max_x):
+        """Moves the miner actor strictly along the X-axis, along the bottom of the screen.
+        
+        Args:
+            max_x (int): The maximum x value
+            
+        I set y to 585 because it is the max y value minus the scale."""
+        x = (self._position.get_x() + self._velocity.get_x()) % max_x
+        y = 585
+        self._position = Point(x, y)
+        print(y)
