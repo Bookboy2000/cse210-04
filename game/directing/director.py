@@ -61,6 +61,7 @@ class Director:
         miner.move_next(max_x, max_y)
         
         for treasure in treasures:
+            treasure.move_next(max_x, max_y)
             if miner.get_position().equals(treasure.get_position()):
                 tempscore = treasure.get_points()
                 self._score += tempscore

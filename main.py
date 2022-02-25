@@ -1,5 +1,6 @@
 import os
 import random
+from tkinter.tix import CELL
 
 from game.cast.actor import Actor
 from game.cast.treasure import Treasure
@@ -23,6 +24,8 @@ ROWS = 40
 CAPTION = "Greed"
 WHITE = Color(255, 255, 255)
 DEFAULT_TREASURES = 40
+TREASURE_VELOCITY = Point(0, 1)
+TREASURE_VELOCITY = TREASURE_VELOCITY.scale(CELL_SIZE)
 
 def main():
     
@@ -65,6 +68,7 @@ def main():
         treasure.set_font_size(FONT_SIZE)
         treasure.set_color(color)
         treasure.set_position(position)
+        treasure.set_velocity(TREASURE_VELOCITY)
         cast.add_actor("treasures", treasure)
 
     keyboard_service = KeyboardService(CELL_SIZE)

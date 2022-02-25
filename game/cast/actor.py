@@ -29,6 +29,8 @@ class Actor:
         self._velocity = Point(0, 0)
         self._text = ""
         self._font_size = 15
+        
+        #I added font_size as we needed it in order to actually visually represent the actors. -Noah
 
 
     def get_color(self):
