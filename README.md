@@ -2,6 +2,17 @@
 School repo for making games
 
 
+Authors:
+Kade Wilson
+Noah Blevins 
+Ashton Pieterse
+Eric Souza da Costa
+Joemarie Denoy
+
+
+Greed is a game where you try to collect items as they fall down the screen towards you, but watch out! You don't want to grab a rock, its worthless! Catch the jewels as they fall to increase your score, and avoid the rocks or else your score will decrease!
+
+
 
 Greed:
     Main.py (Noah)
