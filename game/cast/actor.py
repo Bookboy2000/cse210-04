@@ -156,4 +156,3 @@ class Actor:
         x = (self._position.get_x() + self._velocity.get_x()) % max_x
         y = 585
         self._position = Point(x, y)
-        print(y)
