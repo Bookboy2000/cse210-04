@@ -48,6 +48,12 @@ class Treasure(Actor):
         """Gets the treasure's pounts"""
         return self._points
     
+    def set_points(self, points):
+        
+        """Sets the treasure to have new points"""
+        
+        self._points = points
+    
     def reset_item(self):
         
         self._type_determiner = random.randint(1,10) % 2

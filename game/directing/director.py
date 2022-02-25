@@ -70,7 +70,9 @@ class Director:
             if miner.get_position().equals(treasure.get_position()):
                 tempscore = treasure.get_points()
                 self._score += tempscore
-                banner.set_text(f"SCORE: {str(self._score)}") 
+                banner.set_text(f"SCORE: {str(self._score)}")
+                treasure.set_text("")
+                treasure.set_points(0) 
                 
         if self._first_loop == True:
             self._first_loop = False
