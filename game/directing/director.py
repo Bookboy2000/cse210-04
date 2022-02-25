@@ -21,6 +21,7 @@ class Director:
         self._keyboard_service = keyboard_service
         self._video_service = video_service
         self._score = 0
+        self._first_loop = True
         
     def start_game(self, cast):
         """Starts the game using the given cast. Runs the main game loop.
@@ -70,6 +71,15 @@ class Director:
                 tempscore = treasure.get_points()
                 self._score += tempscore
                 banner.set_text(f"SCORE: {str(self._score)}") 
+                
+        if self._first_loop == True:
+            self._first_loop = False
+            counter = 0
+            for treasure in treasures:
+                counter += 3
+                for i in range(counter):
+                    treasure.move_next(max_x, max_y)
+                
            
         
     def _do_outputs(self, cast):
