@@ -1,6 +1,3 @@
-# We can use inheritance in multiple instances on directory 
-# when making use of other classes.
-
 class Director:
     """A person who directs the game. 
     
